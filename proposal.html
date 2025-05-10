@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <style>
+    body { font-family: Arial; margin: 1in; }
+    h1 { font-size: 24pt; }
+    h2 { font-size: 18pt; margin-top: 40px; }
+    p, li { font-size: 12pt; line-height: 1.6; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+
+  <h1>{{title}}</h1>
+  <p><strong>Prepared by:</strong> {{prepared_by}}<br/>
+     <strong>Prepared for:</strong> {{prepared_for}}<br/>
+     <strong>Date:</strong> {{date}}</p>
+
+  <h2>Summary</h2>
+  <p>{{summary.description}}</p>
+  <ul>
+    <li><strong>Key outcomes:</strong> {{summary.key_outcomes}}</li>
+    <li><strong>Integration:</strong> {{summary.integration}}</li>
+    <li><strong>Business improvements:</strong> {{summary.business_improvements}}</li>
+  </ul>
+
+  <h2>Features</h2>
+  <ul>
+    {{#each features}}
+      <li><strong>{{feature_name}}:</strong> {{description}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Workflow</h2>
+  <ol>
+    {{#each workflow_overview}}
+      <li><strong>{{step_name}}:</strong> {{description}}</li>
+    {{/each}}
+  </ol>
+
+  <h2>Timeline</h2>
+  <table>
+    <thead><tr><th>Phase</th><th>Description</th><th>Duration</th></tr></thead>
+    <tbody>
+      {{#each implementation_timeline.phases}}
+        <tr><td>{{name}}</td><td>{{description}}</td><td>{{duration}}</td></tr>
+      {{/each}}
+      <tr><td colspan="2"><strong>Total</strong></td><td>{{implementation_timeline.total_duration}}</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pricing</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Description</th><th>Cost</th></tr></thead>
+    <tbody>
+      {{#each investment_pricing.pricing_table}}
+        <tr><td>{{item}}</td><td>{{description}}</td><td>{{cost}}</td></tr>
+      {{/each}}
+      <tr><td colspan="2"><strong>Total</strong></td><td>{{investment_pricing.total_investment}}</td></tr>
+      <tr><td colspan="2"><strong>Ongoing</strong></td><td>{{investment_pricing.ongoing_costs}}</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Why Us</h2>
+  <ul>
+    {{#each why_us}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>Next Steps</h2>
+  <ul>
+    {{#each next_steps}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+</body>
+</html>
