@@ -2,52 +2,89 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <title>{{Title}}</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 1in; }
-    h1 { font-size: 26pt; margin-bottom: 0; }
-    h2 { font-size: 18pt; margin-top: 40px; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
-    p, li { font-size: 12pt; line-height: 1.6; }
-    ul, ol { margin-top: 10px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f9f9f9; }
+    body {
+      font-family: "Georgia", serif;
+      font-size: 12pt;
+      line-height: 1.6;
+      margin: 1.2in;
+      color: #000;
+    }
+    h1 {
+      font-size: 22pt;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 16pt;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 4px;
+    }
+    p {
+      margin: 12px 0;
+    }
+    ul, ol {
+      margin: 0 0 1em 1.5em;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      vertical-align: top;
+    }
+    th {
+      background: #f2f2f2;
+    }
+    .meta {
+      font-size: 11pt;
+      margin-bottom: 30px;
+    }
+    .meta p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
 
   <h1>{{Title}}</h1>
-  <p>
-    <strong>Date:</strong> {{Date}}<br/>
-    <strong>Prepared By:</strong> {{Prepared_By}}<br/>
-    <strong>Prepared For:</strong> {{Prepared_For}}
-  </p>
 
-  <h2>Summary</h2>
+  <div class="meta">
+    <p><strong>Date:</strong> {{Date}}</p>
+    <p><strong>Prepared By:</strong> {{Prepared_By}}</p>
+    <p><strong>Prepared For:</strong> {{Prepared_For}}</p>
+  </div>
+
+  <h2>1. Summary</h2>
   <p>{{Summary}}</p>
 
-  <h2>Features</h2>
-  <ul>
-    {{Features}}
-  </ul>
+  <h2>2. Features</h2>
+  <ul>{{Features}}</ul>
 
-  <h2>Workflow Overview</h2>
+  <h2>3. Workflow Overview</h2>
   {{Workflow_Overview}}
 
-  <h2>Implementation Timeline and Deliverables</h2>
+  <h2>4. Implementation Timeline & Deliverables</h2>
   {{Implementation_Timeline_and_Deliverables}}
 
-  <h2>Investment and Pricing</h2>
+  <h2>5. Investment & Pricing</h2>
   {{Investment_and_Pricing}}
 
-  <h2>Why Automate Anything AI</h2>
-  <ul>
-    {{Why_Automate_Anything_AI}}
-  </ul>
+  <h2>6. Why Automate Anything AI?</h2>
+  <ul>{{Why_Automate_Anything_AI}}</ul>
 
-  <h2>Next Steps</h2>
-  <ol>
-    {{Next_Steps}}
-  </ol>
+  <h2>7. Next Steps</h2>
+  <ol>{{Next_Steps}}</ol>
 
 </body>
 </html>
