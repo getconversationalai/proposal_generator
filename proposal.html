@@ -3,80 +3,51 @@
 <head>
   <meta charset="utf-8"/>
   <style>
-    body { font-family: Arial; margin: 1in; }
-    h1 { font-size: 24pt; }
-    h2 { font-size: 18pt; margin-top: 40px; }
+    body { font-family: Arial, sans-serif; margin: 1in; }
+    h1 { font-size: 26pt; margin-bottom: 0; }
+    h2 { font-size: 18pt; margin-top: 40px; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
     p, li { font-size: 12pt; line-height: 1.6; }
+    ul, ol { margin-top: 10px; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; }
-    th { background-color: #f2f2f2; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f9f9f9; }
   </style>
 </head>
 <body>
 
-  <h1>{{title}}</h1>
-  <p><strong>Prepared by:</strong> {{prepared_by}}<br/>
-     <strong>Prepared for:</strong> {{prepared_for}}<br/>
-     <strong>Date:</strong> {{date}}</p>
+  <h1>{{Title}}</h1>
+  <p>
+    <strong>Date:</strong> {{Date}}<br/>
+    <strong>Prepared By:</strong> {{Prepared_By}}<br/>
+    <strong>Prepared For:</strong> {{Prepared_For}}
+  </p>
 
   <h2>Summary</h2>
-  <p>{{summary.description}}</p>
-  <ul>
-    <li><strong>Key outcomes:</strong> {{summary.key_outcomes}}</li>
-    <li><strong>Integration:</strong> {{summary.integration}}</li>
-    <li><strong>Business improvements:</strong> {{summary.business_improvements}}</li>
-  </ul>
+  <p>{{Summary}}</p>
 
   <h2>Features</h2>
   <ul>
-    {{#each features}}
-      <li><strong>{{feature_name}}:</strong> {{description}}</li>
-    {{/each}}
+    {{Features}}
   </ul>
 
-  <h2>Workflow</h2>
-  <ol>
-    {{#each workflow_overview}}
-      <li><strong>{{step_name}}:</strong> {{description}}</li>
-    {{/each}}
-  </ol>
+  <h2>Workflow Overview</h2>
+  {{Workflow_Overview}}
 
-  <h2>Timeline</h2>
-  <table>
-    <thead><tr><th>Phase</th><th>Description</th><th>Duration</th></tr></thead>
-    <tbody>
-      {{#each implementation_timeline.phases}}
-        <tr><td>{{name}}</td><td>{{description}}</td><td>{{duration}}</td></tr>
-      {{/each}}
-      <tr><td colspan="2"><strong>Total</strong></td><td>{{implementation_timeline.total_duration}}</td></tr>
-    </tbody>
-  </table>
+  <h2>Implementation Timeline and Deliverables</h2>
+  {{Implementation_Timeline_and_Deliverables}}
 
-  <h2>Pricing</h2>
-  <table>
-    <thead><tr><th>Item</th><th>Description</th><th>Cost</th></tr></thead>
-    <tbody>
-      {{#each investment_pricing.pricing_table}}
-        <tr><td>{{item}}</td><td>{{description}}</td><td>{{cost}}</td></tr>
-      {{/each}}
-      <tr><td colspan="2"><strong>Total</strong></td><td>{{investment_pricing.total_investment}}</td></tr>
-      <tr><td colspan="2"><strong>Ongoing</strong></td><td>{{investment_pricing.ongoing_costs}}</td></tr>
-    </tbody>
-  </table>
+  <h2>Investment and Pricing</h2>
+  {{Investment_and_Pricing}}
 
-  <h2>Why Us</h2>
+  <h2>Why Automate Anything AI</h2>
   <ul>
-    {{#each why_us}}
-      <li>{{this}}</li>
-    {{/each}}
+    {{Why_Automate_Anything_AI}}
   </ul>
 
   <h2>Next Steps</h2>
-  <ul>
-    {{#each next_steps}}
-      <li>{{this}}</li>
-    {{/each}}
-  </ul>
+  <ol>
+    {{Next_Steps}}
+  </ol>
 
 </body>
 </html>
